@@ -6,6 +6,7 @@
 
 package com.alexsanderdev.motivation.ui
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.activity.ComponentActivity
@@ -31,19 +32,32 @@ class MainActivity : ComponentActivity(), View.OnClickListener {
         handleFilter(R.id.image_all)
         handleNextPhrase()
 
-        // Eventos
-        binding.buttonNewPhrase.setOnClickListener(this)
+        // Listeners
+        setListeners()
 
+    }
+
+    private fun setListeners() {
+        binding.buttonNewPhrase.setOnClickListener(this)
         binding.imageAll.setOnClickListener(this)
         binding.imageHappy.setOnClickListener(this)
         binding.imageSunny.setOnClickListener(this)
+        binding.textUserName.setOnClickListener(this)
     }
 
     override fun onClick(view: View) {
-        if (view.id == R.id.button_new_phrase) {
-            handleNextPhrase()
-        } else if (view.id in listOf(R.id.image_all, R.id.image_happy, R.id.image_sunny)) {
-            handleFilter(view.id)
+        when (view.id) {
+            R.id.button_new_phrase -> {
+                handleNextPhrase()
+            }
+
+            in listOf(R.id.image_all, R.id.image_happy, R.id.image_sunny) -> {
+                handleFilter(view.id)
+            }
+
+            R.id.text_user_name -> {
+                startActivity(Intent(this, UserActivity::class.java))
+            }
         }
     }
 

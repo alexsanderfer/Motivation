@@ -1,6 +1,11 @@
+/*
+ * Copyright (c) 2023. Created by Alexsander at 11/6. All rights reserved.
+ * GitHub: https://github.com/alexsanderfer/
+ * Portfolio: https://alexsanderfer.netlify.app/
+ */
+
 package com.alexsanderdev.motivation.ui
 
-import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
@@ -22,7 +27,7 @@ class UserActivity : ComponentActivity(), View.OnClickListener {
 
         setContentView(binding.root)
 
-        verifyUserName()
+
     }
 
     override fun onClick(view: View) {
@@ -31,19 +36,11 @@ class UserActivity : ComponentActivity(), View.OnClickListener {
         }
     }
 
-    private fun verifyUserName() {
-        val name = SecurityPreferences(this).getString(MotivationConstants.KEY.USER_NAME)
-        if (name.isNotEmpty()) {
-            startActivity(Intent(this, MainActivity::class.java))
-            finish()
-        }
-    }
-
     private fun handleSave() {
         val name = binding.editName.text.toString()
         if (name.isNotEmpty()) {
             SecurityPreferences(this).storageString(MotivationConstants.KEY.USER_NAME, name)
-            startActivity(Intent(this, MainActivity::class.java))
+
             finish()
         } else {
             Toast.makeText(this, getString(R.string.validation_mandatory_name), Toast.LENGTH_SHORT).show()
