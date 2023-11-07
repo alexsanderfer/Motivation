@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2023. Created by Alexsander at 11/6. All rights reserved.
+ * Copyright (c) 2023. Created by Alexsander at 11/7. All rights reserved.
  * GitHub: https://github.com/alexsanderfer/
  * Portfolio: https://alexsanderfer.netlify.app/
  */
@@ -16,6 +16,7 @@ import com.alexsanderdev.motivation.data.Mock
 import com.alexsanderdev.motivation.databinding.ActivityMainBinding
 import com.alexsanderdev.motivation.infrastructure.MotivationConstants
 import com.alexsanderdev.motivation.infrastructure.SecurityPreferences
+import java.util.*
 
 class MainActivity : ComponentActivity(), View.OnClickListener {
 
@@ -62,7 +63,7 @@ class MainActivity : ComponentActivity(), View.OnClickListener {
     }
 
     private fun handleNextPhrase() {
-        binding.textPhrase.text = Mock().getPhrase(categoryID)
+        binding.textPhrase.text = Mock().getPhrase(categoryID, Locale.getDefault().language)
     }
 
     private fun handleFilter(id: Int) {

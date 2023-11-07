@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2023. Created by Alexsander at 11/6. All rights reserved.
+ * Copyright (c) 2023. Created by Alexsander at 11/7. All rights reserved.
  * GitHub: https://github.com/alexsanderfer/
  * Portfolio: https://alexsanderfer.netlify.app/
  */
@@ -15,5 +15,10 @@ class MotivationConstants private constructor() {
         const val ALL = 1
         const val HAPPY = 2
         const val SUNNY = 3
+    }
+
+    object LANGUAGE {
+        const val PORTUGUESE = "pt"
+        const val ENGLISH = "en"
     }
 }

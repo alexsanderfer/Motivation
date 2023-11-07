@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (c) 2023. Created by Alexsander at 11/7. All rights reserved.
+  ~ GitHub: https://github.com/alexsanderfer/
+  ~ Portfolio: https://alexsanderfer.netlify.app/
+  -->
+
+<resources>
+    <string name="app_name">Motivation</string>
+    <string name="new_phrase">New phase</string>
+    <string name="your_name">Your name</string>
+    <string name="user">User</string>
+    <string name="phrase">Phrase</string>
+    <string name="save">Save</string>
+    <string name="lets_begin">Let\'s begin?</string>
+    <string name="phrases_all">All phrases</string>
+    <string name="phrases_motivation">Motivational phrases</string>
+    <string name="phrases_morning">Morning phrases</string>
+    <string name="validation_mandatory_name">Please provide your name?</string>
+    <string name="greetings">Hello, %1$s</string>
+</resources>
